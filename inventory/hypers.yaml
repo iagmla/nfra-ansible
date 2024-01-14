@@ -1,0 +1,4 @@
+pool0:
+  hosts:
+    asmodeus:
+    debian0:

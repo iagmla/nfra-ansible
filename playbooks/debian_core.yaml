@@ -1,0 +1,10 @@
+---
+- name: Frequently used OS tools
+  hosts: pool0
+  remote_user: iagmla
+
+tasks:
+ - name: Check if net-tools is latest
+    ansible.builtin.apt:
+      name: net-tools
+      state: latest

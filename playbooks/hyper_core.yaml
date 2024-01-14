@@ -1,0 +1,30 @@
+---
+- name: Setup hypervisor
+  hosts: pool0
+  remote_user: root
+  
+  tasks:
+  - name: Check if libvirt-daemon is latest
+    ansible.builtin.apt:
+      name: libvirt-daemon
+      state: latest
+  
+  - name: Check if libvirt-clients is latest
+    ansible.builtin.apt:
+      name: libvirt-clients
+      state: latest
+  
+  - name: Check if libvirt-dev is latest
+    ansible.builtin.apt:
+      name: libvirt-dev
+      state: latest
+
+  - name: nfra directory
+    ansible.builtin.file:
+      path: /nfra
+      state: directory
+
+  - name: Checkout nfra repo
+    ansible.builtin.git:
+      repo: 'https://github.com/iagmla/nfra'
+      dest: /nfra
