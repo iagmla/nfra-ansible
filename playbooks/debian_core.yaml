@@ -4,7 +4,12 @@
   remote_user: iagmla
 
 tasks:
- - name: Check if net-tools is latest
+  - name: Check if net-tools is latest
     ansible.builtin.apt:
       name: net-tools
+      state: latest
+ 
+  - name: Check if git is latest
+    ansible.builtin.apt:
+      name: git
       state: latest
