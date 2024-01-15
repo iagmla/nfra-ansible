@@ -1,9 +1,10 @@
 ---
-- name: Hypervisor tasks
+- name: Setup libvirt on pool0
   hosts: pool0
-  remote_user: root
-  
+  become: true
+
   tasks:
+
   - name: Check if libvirt-daemon is latest
     ansible.builtin.apt:
       name: libvirt-daemon

@@ -1,0 +1,4 @@
+- name: Restart the libvirt service
+  service:
+    name: libvirt
+    state: restarted
