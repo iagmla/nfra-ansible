@@ -1,9 +1,6 @@
 ---
-- name: Setup libvirt on pool0
-  hosts: pool0
-  become: true
-
-  tasks:
+  - include_role:
+      name: common
 
   - name: Check if libvirt-daemon is latest
     ansible.builtin.apt:

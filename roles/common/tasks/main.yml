@@ -1,9 +1,4 @@
 ---
-- name: Frequently used OS tools
-  hosts: pool0
-  remote_user: root
-
-tasks:
   - name: Check if net-tools is latest
     ansible.builtin.apt:
       name: net-tools
