@@ -1,5 +1,5 @@
 ---
-- name: Setup hypervisor
+- name: Hypervisor tasks
   hosts: pool0
   remote_user: root
   
