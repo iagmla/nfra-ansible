@@ -1,0 +1,8 @@
+---
+  - include_role:
+      name: common 
+
+  - name: Install libsodium latest
+    ansible.builtin.apt:
+      name: libsodium-dev
+      state: latest
