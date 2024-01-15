@@ -1,6 +1,11 @@
 ---
   - include_role:
       name: common
+  
+  - name: Install latest qemu-kvm
+    ansible.builtin.apt:
+      name: qemu-kvm
+      state: latest
 
   - name: Install Ubuntu libvirt-daemon
     ansible.builtin.apt:
@@ -49,3 +54,7 @@
     ansible.builtin.git:
       repo: 'https://github.com/iagmla/nfra'
       dest: /nfra
+
+  - name: Print completion message
+    ansible.builtin.debug:
+      msg: "Hypervisor setup complete"

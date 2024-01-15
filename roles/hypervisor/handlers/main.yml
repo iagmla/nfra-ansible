@@ -1,4 +1,4 @@
-- name: Restart the libvirt service
+- name: Ensure the ssh service is restarted
   service:
-    name: libvirt
+    name: ssh
     state: restarted

@@ -1,4 +1,11 @@
 ---
+  - name: Setup sshd config
+    ansible.builtin.copy:
+       src: files/sshd_config
+       dest: /etc/ssh/sshd_config
+       mode: 644
+    notify: Restart sshd
+
   - name: Check if net-tools is latest
     ansible.builtin.apt:
       name: net-tools

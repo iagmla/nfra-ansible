@@ -1,0 +1,5 @@
+---
+ - hosts: pool1
+   become: true
+   roles:
+   - common
