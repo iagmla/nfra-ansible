@@ -6,3 +6,8 @@
     ansible.builtin.apt:
       name: libsodium-dev
       state: latest
+  
+  - name: Install SSL dev latest
+    ansible.builtin.apt:
+      name: libssl-dev
+      state: latest

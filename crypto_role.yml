@@ -1,0 +1,5 @@
+---
+ - hosts: crypto0
+   become: true
+   roles:
+   - crypto
