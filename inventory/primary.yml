@@ -3,6 +3,10 @@ pool0:
     asmodeus:
     debian0:
 
+pool1:
+  hosts:
+    asmodeus:
+
 crypto0:
   hosts:
     asmodeus:

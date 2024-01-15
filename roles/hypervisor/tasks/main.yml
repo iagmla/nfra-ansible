@@ -2,20 +2,43 @@
   - include_role:
       name: common
 
-  - name: Check if libvirt-daemon is latest
+  - name: Install Ubuntu libvirt-daemon
     ansible.builtin.apt:
-      name: libvirt-daemon
-      state: latest
+      name: libvirt-daemon=8.0.0-1ubuntu7.8
+      state: present
+    when: ansible_facts['distribution'] == "Ubuntu"
   
-  - name: Check if libvirt-clients is latest
+  - name: Install Ubuntu libvirt-daemon
     ansible.builtin.apt:
-      name: libvirt-clients
-      state: latest
+      name: libvirt-clients=8.0.0-1ubuntu7.8
+      state: present
+    when: ansible_facts['distribution'] == "Ubuntu"
   
-  - name: Check if libvirt-dev is latest
+  - name: Install Ubuntu libvirt-dev
     ansible.builtin.apt:
-      name: libvirt-dev
-      state: latest
+      name: libvirt-dev=8.0.0-1ubuntu7.8
+      state: present
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+# Debian libvirt
+
+  - name: Install Debian libvirt-daemon
+    ansible.builtin.apt:
+      name: libvirt-daemon=7.0.0-3+deb11u2
+      state: present
+    when: ansible_facts['distribution'] == "Debian"
+
+  - name: Install Debian libvirt-daemon
+    ansible.builtin.apt:
+      name: libvirt-clients=7.0.0-3+deb11u2
+      state: present
+    when: ansible_facts['distribution'] == "Debian"
+
+  - name: Install Debian libvirt-dev
+    ansible.builtin.apt:
+      name: libvirt-dev=7.0.0-3+deb11u2
+      state: present
+    when: ansible_facts['distribution'] == "Debian"
 
   - name: nfra directory
     ansible.builtin.file:
